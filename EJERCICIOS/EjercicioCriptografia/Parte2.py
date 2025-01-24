@@ -67,6 +67,24 @@ def binary_to_text(binary):
         result += chr(decimal)
     return result
 
+# Conversión de texto a base64
+def text_to_base64(text):
+    print("\nConversión de texto a base64")
+    binary = text_to_binary(text)
+    print(f'Texto a binario: {binary}')
+    base64 = binary_to_base64(binary)
+    print(f'Binario a base64: {base64}')
+    return base64
+
+# Conversión de base64 a texto
+def base64_to_text(base64):
+    print("\nConversión de base64 a texto")
+    binary = base64_to_binary(base64)
+    print(f'Base64 a binario: {binary}')
+    text = binary_to_text(binary)
+    print(f'Binario a texto: {text}')
+    return text
+
 # --------------------------------------------------- Ejecución -----------------------------------------------------------
 
 binary = text_to_binary(text)
