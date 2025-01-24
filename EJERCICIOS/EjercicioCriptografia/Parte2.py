@@ -1,3 +1,6 @@
+import random
+import string
+
 # Scipts 
 print("SCRIPTS DE CRIPTOGRAFÍA")
 text = 'Sebastián'
@@ -12,6 +15,13 @@ def decimal_to_binary(decimal):
         binary = str(decimal % 2) + binary
         decimal = decimal // 2
     return binary.zfill(8)
+
+# Generación de clave dinámica
+def dynamic_key(length):
+    print("\nGeneración de clave dinámica")
+    key = ''.join(random.choice(string.ascii_letters + string.digits + string.punctuation) for _ in range(length))
+    print(f'Clave generada: {key}')
+    return key
 
 # --------------------------------------------------- Funciones Principales --------------------------------------------------
 
@@ -85,6 +95,49 @@ def base64_to_text(base64):
     print(f'Binario a texto: {text}')
     return text
 
+# XOR de dos cadenas de binarios
+def xor(binary, key):
+    print("\nXOR de dos cadenas de binarios")
+    
+    if len(key) < len(binary):
+        key = key.ljust(len(binary), '0')
+        print(f'Key actualizada: {key}')
+
+    if len(binary) < len(key):
+        binary = binary.ljust(len(key), '0')
+        print(f'Binario actualizado: {binary}')
+
+    result = ''
+    for i in range(len(binary)):
+        xor_value = int(binary[i]) ^ int(key[i])
+        result += str(xor_value)
+    return result
+
+# Cifrado con una llave fija
+def encryption_fixed_key(text, key):
+    print("\nCifrado con una llave fija")
+    binary_text = text_to_binary(text)
+    binary_key = text_to_binary(key)
+
+    cypher_binary = xor(binary_text, binary_key)
+    cypher_text = binary_to_text(cypher_binary)
+
+    print(f'Texto cifrado: {cypher_text}')
+    return cypher_text
+
+# Cifrado con una llave dinámica
+def encryption_dynamic_key(text):
+    print("\nCifrado con una llave dinámica")
+    key = dynamic_key(len(text))
+    binary_text = text_to_binary(text)
+    binary_key = text_to_binary(key)
+
+    cypher_binary = xor(binary_text, binary_key)
+    cypher_text = binary_to_text(cypher_binary)
+
+    print(f'Texto cifrado: {cypher_text}')
+    return cypher_text
+
 # --------------------------------------------------- Ejecución -----------------------------------------------------------
 
 binary = text_to_binary(text)
@@ -98,3 +151,6 @@ print(f'Base64 a binario: {binary}')
 
 text = binary_to_text(binary)
 print(f'Binario a texto: {text}')
+
+result = xor('11001010', '01111110')
+print(f'Resultado XOR: {result}')
