@@ -44,6 +44,8 @@ Mensaje descifrado: hola mundo
 ## Referencias
 Stallings, W. (2016). Cryptography and Network Security: Principles and Practice (7ª ed.). Pearson.
 
+<br>
+
 # Ejercicio No. 2
 
 ## Demostración Cifrado con Llave Fija
