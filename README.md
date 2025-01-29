@@ -121,16 +121,16 @@ Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
   <img width='75' src="https://avatars.githubusercontent.com/u/16949087?v=4" alt="Sebastián Solorzano" />
 </a>
 
-* [![Linkedin][Linkedin]][www.linkedin.com/in/sebastián-josé-solorzano-pérez-7544b9205]
-* [![GitHub][GitHub]][https://github.com/Sebas021210]
+* [![Linkedin][Linkedin]][Linkedin-lud]
+* [![GitHub][GitHub]][GitHub-lud]
 
 <p align="right">(<a href="#readme-top">Ir al inicio</a>)</p>
 
 ## 📞 Contacto
 Si tienes preguntas o comentarios, puedes contactarnos a traves de nuestras redes sociales:
 
-* [![Instagram][Instagram]][https://www.instagram.com/sebass.sp/]
-* [![Website][Website]][https://sebastian-solorzano.web.app/]
+* [![Instagram][Instagram]][Instagram-url]
+* [![Website][Website]][Website-url]
 
 <p align="right">(<a href="#readme-top">Ir al inicio</a>)</p>
 
@@ -154,16 +154,16 @@ Si tienes preguntas o comentarios, puedes contactarnos a traves de nuestras rede
 [Python]: https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
 [Instagram]: https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white
-[Instagram-url]: https://www.instagram.com/ludwing238/
+[Instagram-url]: https://www.instagram.com/sebass.sp/
 [Instagram]: https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white
 [Instagram-url]: https://www.instagram.com/ludwing238/
 [Website]: https://img.shields.io/website?url=https://lc2tech.com/
-[Website-url]: https://lc2tech.com/
+[Website-url]: https://sebastian-solorzano.web.app/
 [AntDesign]: https://img.shields.io/badge/-Ant%20Design-333333?style=flat&logo=ant-design&logoColor=0170FE
 [AntDesign-url]: https://ant.design/
 [Chartjs]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
 [Chartjs-url]: https://github.com/reactchartjs/react-chartjs-2
-[Linkedin-lud]: https://www.linkedin.com/in/ludwing-cano238
+[Linkedin-lud]: https://www.linkedin.com/in/sebastián-josé-solorzano-pérez-7544b9205
 [Linkedin]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[Github-lud]: https://github.com/locano
+[Github-lud]: https://github.com/Sebas021210
 [GitHub]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
