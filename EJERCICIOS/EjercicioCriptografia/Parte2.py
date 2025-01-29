@@ -117,9 +117,9 @@ def encryption_fixed_key(text, key):
     return cypher_text
 
 # Cifrado con una llave dinámica
-def encryption_dynamic_key(text):
+def encryption_dynamic_key(text, length):
     print("\n-Cifrado con una llave dinámica-")
-    key = dynamic_key(len(text))
+    key = dynamic_key(length)
     binary_text = text_to_binary(text)
     binary_key = text_to_binary(key)
 
@@ -161,10 +161,11 @@ def decryption_dynamic_key(cypher_text, key):
 
 # Texto a cifrar
 text = 'Hola Mundo!'
+length = 10
 
 # Cifrado de texto
 cypher_fixed = encryption_fixed_key(text, 'key')
-cypher_dynamic, key = encryption_dynamic_key(text)
+cypher_dynamic, key = encryption_dynamic_key(text, length)
 
 # Descifrado de texto
 decryption_fixed_key(cypher_fixed, 'key')
