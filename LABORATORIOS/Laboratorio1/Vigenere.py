@@ -3,6 +3,7 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 def vigenere_encrypt(text, key):
     result = ''
+    text = ''.join([c.lower() for c in text if c.isalpha() or c == ' '])
     for c in range(len(text)):
         if text[c] in alphabet:
             result += alphabet[(alphabet.index(text[c]) + alphabet.index(key[c % len(key)])) % len(alphabet)]

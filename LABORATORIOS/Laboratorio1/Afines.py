@@ -9,6 +9,7 @@ def modInverse(a, m) :
 
 def afine_encrypt(text, a, b):
     result = ''
+    text = ''.join([c.lower() for c in text if c.isalpha() or c == ' '])
     for c in text:
         if c in alphabet:
             result += alphabet[(a * alphabet.index(c) + b) % len(alphabet)]
