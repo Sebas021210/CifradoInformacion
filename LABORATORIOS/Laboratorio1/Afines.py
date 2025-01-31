@@ -15,6 +15,7 @@ def afine_encrypt(text, a, b):
             result += alphabet[(a * alphabet.index(c) + b) % len(alphabet)]
         else:
             result += c
+    print(f'Mensaje cifrado: {result}')
     return result
 
 def afine_decrypt(text, a, b):
@@ -25,14 +26,5 @@ def afine_decrypt(text, a, b):
             result += alphabet[(aInverse * (alphabet.index(c) - b)) % len(alphabet)]
         else:
             result += c
+    print(f'Mensaje descifrado: {result}')
     return result
-
-text = 'hola mundo'
-a = 3
-b = 8
-
-print("Cifrado Afines")
-encrypted = afine_encrypt(text, a, b)
-print(f"Mensaje cifrado: {encrypted}")
-descrypted = afine_decrypt(encrypted, a, b)
-print(f"Mensaje descifrado: {descrypted}")
