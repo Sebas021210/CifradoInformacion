@@ -1,5 +1,5 @@
 # Cifrado Afines
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+alphabet = 'abcdefghijklmnñopqrstuvwxyz'
 
 def modInverse(a, m) :
     for i in range(1, m) :

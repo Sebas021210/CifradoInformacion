@@ -38,10 +38,40 @@ def brute_force_caesar(cipher_text, spanish_distribution, max_shift=30):
 
     return best_shift[:3]
 
+def brute_force_afine(cipher_text, spanish_distribution, max_a=16, max_b=16):
+    best_keys = []
+
+    for a in range(1, max_a + 1):
+        try:
+            aInverse = Afines.modInverse(a, len(Afines.alphabet))
+        except ValueError:
+            continue
+
+        for b in range(1, max_b + 1):
+            decrypted_text = Afines.afine_decrypt(cipher_text, a, b)
+            cleaned_text = clean_text(decrypted_text)
+            freq, _ = Frecuencia.frequency_analysis(cleaned_text)
+            _, _, score = Frecuencia.compare_distribution(freq, spanish_distribution)
+            total_score = sum(score.values())
+            best_keys.append((a, b, total_score, decrypted_text))
+        
+    best_keys.sort(key=lambda x: x[2])
+
+    return best_keys[:3]
+
 spanish_distribution = load_spanish_frequencies("LABORATORIOS/Laboratorio1/sp_frequencies.txt")
-cipher_text = load_cipher_text("LABORATORIOS/Laboratorio1/Cifrados/ceasar.txt")
+cipher_text = load_cipher_text("LABORATORIOS/Laboratorio1/Cifrados/afines.txt")
+
+'''
 best_keys = brute_force_caesar(cipher_text, spanish_distribution)
 print("\nMejores llaves encontradas: ")
 for key, score, text in best_keys:
     print(f"Llave: {key}")
     print(f"Texto descifrado: {text}\n")
+'''
+
+best_keys = brute_force_afine(cipher_text, spanish_distribution)
+print("\nMejores llaves encontradas para el cifrado Afín:")
+for a, b, score, text in best_keys:
+    print(f"Llave (a, b): ({a}, {b})")
+    print(f"Texto descifrado:\n{text}\n")
