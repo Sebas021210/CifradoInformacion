@@ -15,7 +15,7 @@ def afine_encrypt(text, a, b):
             result += alphabet[(a * alphabet.index(c) + b) % len(alphabet)]
         else:
             result += c
-    print(f'Mensaje cifrado: {result}')
+    #print(f'Mensaje cifrado: {result}')
     return result
 
 def afine_decrypt(text, a, b):
@@ -26,5 +26,5 @@ def afine_decrypt(text, a, b):
             result += alphabet[(aInverse * (alphabet.index(c) - b)) % len(alphabet)]
         else:
             result += c
-    print(f'Mensaje descifrado: {result}')
+    #print(f'Mensaje descifrado: {result}')
     return result

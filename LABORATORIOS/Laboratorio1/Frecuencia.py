@@ -23,22 +23,24 @@ def frequency_analysis(text):
     ordered_frecuencies = sorted(frecuencies.items(), key=lambda x: x[1], reverse=True)
     return frecuencies, ordered_frecuencies
 
-def compare_distribution(frequency):
-    distribution = {
-        'a': 12.53 / 100, 'b': 1.42 / 100, 'c': 4.68 / 100, 'd': 5.86 / 100, 'e': 13.68 / 100,
-        'f': 0.69 / 100, 'g': 1.01 / 100, 'h': 0.70 / 100, 'i': 6.25 / 100, 'j': 0.44 / 100,
-        'k': 0.02 / 100, 'l': 4.97 / 100, 'm': 3.15 / 100, 'n': 6.71 / 100, 'ñ': 0.31 / 100,
-        'o': 8.68 / 100, 'p': 2.51 / 100, 'q': 0.88 / 100, 'r': 6.87 / 100, 's': 7.98 / 100,
-        't': 4.63 / 100, 'u': 3.93 / 100, 'v': 0.90 / 100, 'w': 0.01 / 100, 'x': 0.22 / 100,
-        'y': 0.90 / 100, 'z': 0.52 / 100
-    }
-
+def compare_distribution(frequency, distribution=None):
+    if distribution is None:
+        distribution = {
+            'a': 12.53 / 100, 'b': 1.42 / 100, 'c': 4.68 / 100, 'd': 5.86 / 100, 'e': 13.68 / 100,
+            'f': 0.69 / 100, 'g': 1.01 / 100, 'h': 0.70 / 100, 'i': 6.25 / 100, 'j': 0.44 / 100,
+            'k': 0.02 / 100, 'l': 4.97 / 100, 'm': 3.15 / 100, 'n': 6.71 / 100, 'ñ': 0.31 / 100,
+            'o': 8.68 / 100, 'p': 2.51 / 100, 'q': 0.88 / 100, 'r': 6.87 / 100, 's': 7.98 / 100,
+            't': 4.63 / 100, 'u': 3.93 / 100, 'v': 0.90 / 100, 'w': 0.01 / 100, 'x': 0.22 / 100,
+            'y': 0.90 / 100, 'z': 0.52 / 100
+        }
+    
     observed_dict = dict(frequency)
     differences = {letter: abs(observed_dict.get(letter, 0) - distribution[letter]) for letter in distribution}
     sorted_differences = sorted(differences.items(), key=lambda x: x[1], reverse=True)
 
     return distribution, sorted_differences, differences
 
+'''
 text = "Este es un ejemplo de análisis de frecuencia de caracteres"
 key = 3
 
@@ -65,3 +67,4 @@ plt.ylabel("Frecuencia")
 plt.title("Análisis de frecuencia: Texto cifrado vs Español")
 plt.legend()
 plt.show()
+'''

@@ -1,5 +1,5 @@
 # Cifrado César
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+alphabet = 'abcdefghijklmnñopqrstuvwxyz'
 
 def cesar_encrypt(text, key):
     result = ''
@@ -9,7 +9,7 @@ def cesar_encrypt(text, key):
             result += alphabet[(alphabet.index(c) + key) % len(alphabet)]
         else:
             result += c
-    print(f'Mensaje cifrado: {result}')
+    #print(f'Mensaje cifrado: {result}')
     return result
 
 def cesar_decrypt(text, key):
@@ -19,5 +19,5 @@ def cesar_decrypt(text, key):
             result += alphabet[(alphabet.index(c) - key) % len(alphabet)]
         else:
             result += c
-    print(f'Mensaje descifrado: {result}')
+    #print(f'Mensaje descifrado: {result}')
     return result
