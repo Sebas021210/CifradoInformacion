@@ -248,3 +248,55 @@ Key: 0110001101101100011000010111011001100101
 Key expandida: 01100011011011000110000101110110011001010110001101101100011000010111011001100101
 Resultado XOR: 00101011000000110000110100010111010001010010111000011001000011110001001000001010
 ```
+
+## Valor original de una imagen 
+```python
+import base64
+import Base64_XOR
+
+with open("<image>", "rb") as img_file:
+    image_bytes = img_file.read()
+
+base64_encoded = base64.b64encode(image_bytes).decode()
+image_bytes = Base64_XOR.base64_to_binary(base64_encoded)
+
+key_bytes = Base64_XOR.text_to_binary("<key>")
+
+xor_result = Base64_XOR.xor(image_bytes, key_bytes)
+
+base64_decoded = Base64_XOR.binary_to_base64(xor_result)
+image_bytes_decoded = base64.b64decode(base64_decoded)
+
+with open("<new_image>", "wb") as img_file:
+    img_file.write(image_bytes_decoded)
+```
+
+![Valor original de la imagen](./imagen_decifrada.png)
+
+### Por qué al aplicar XOR con una llave de texto la imagén se corrompe?
+Cuando aplicas una operación XOR con una llave de texto a una imagen, esta se "corrompe" visualmente porque la operación altera directamente los valores de los píxeles de la imagen de una manera no perceptualmente uniforme.
+
+## Aplicación de XOR a dos imágenes
+```python
+from PIL import Image
+import numpy as np
+
+img1 = Image.open("<image1>").convert("RGB")
+img2 = Image.open("<image2>").convert("RGB")
+
+img2 = img2.resize(img1.size)
+arr1 = np.array(img1)
+arr2 = np.array(img2)
+
+xor_result = np.bitwise_xor(arr1, arr2)
+
+img_xor = Image.fromarray(xor_result)
+
+img_xor.save("<imageXOR>")
+```
+
+![XOR entre dos imágenes](../../Multimedia/imageXOR.png)
+
+### Dificultades
+- Con los colores de las imagenes, la operación XOR puede producir resultados de ruido visual. Debido a la manipulación a nivel de bits, los colores originales pueden verse distorsionados.
+- Las dos imágenes deben ser del mismo tamaño. Si no lo son, es necesario redimensionarlas, lo cual puede perder detalles en una de las imágenes.
