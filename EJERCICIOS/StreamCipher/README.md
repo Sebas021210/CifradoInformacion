@@ -51,13 +51,16 @@ OK
 
 ## Preguntas a Responder
 ¿Qué sucede cuando cambias la clave utilizada para generar el keystream?
-- ... 
+- Cuando se cambia la clave utilizada para generar el keystream, provoca una alteración en el generador de números pseudoaleatorios y este generará un keystream completamente diferente. Al cifrar el mismo mensaje con una clave diferente, el texto cifrado también será diferente.
 
 ¿Qué riesgos de seguridad existen si reutilizas el mismo keystream para cifrar dos mensajes diferentes?
-- ...
+- Si se reutiliza el mismo keystream para cifrar dos mensajes diferentes, se tiene un grave riesgo de seguridad. Uno de los principales riegos es la Revelación de Patrones, ya que si un atacante tiene acceso a ambos mensajes cifrados y sabe que comparten el mismo keystream, puede realizar una operación XOR entre ambos para obtener el contenido de los mensajes.
 
 ¿Cómo afecta la longitud del keystream a la seguridad del cifrado?
-- ...
+- La longitud del keystream es importante para la seguridad del cifrado, ya que si el keystream es más corto que el mensaje, se repetirían valores del keystream, lo que comprometerá la seguridad. 
 
 ¿Qué consideraciones debes tener al generar un keystream en un entorno real?
-- ...
+- El keystream debe ser generado de manera aleatoria para que no haya patrones predecibles.
+- No se debe de reutilizar el keystream para cifrar diferentes mensajes. Cada mensaje debería tener su propio keystream único basado en una clave única.
+- Se tiene que asegurar que el keystream tenga la longitud suficiente para el mensaje a cifrar. 
+- El PRNG debe ser rápido y no debe afectar el rendimiento del sistema, especialmente si se necesita generar keystreams para mensajes grandes o de forma continua.
