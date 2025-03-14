@@ -36,8 +36,8 @@ def decrypt(encrypted_data):
     return decrypted_data
 
 # Ejemplo de uso
-encrypted_data = encrypt('./EJERCICIOS/BlockCipher/prueba.txt')
+encrypted_data = encrypt('./EJERCICIOS/BlockCipher/des.txt')
 print("Mensaje cifrado:", encrypted_data)
 
 decrypted_data = decrypt(encrypted_data)
-print("Mensaje descifrado:", decrypted_data.decode("utf-8", errors="ignore"))
+print("\nMensaje descifrado:", decrypted_data.decode("utf-8", errors="ignore"))
