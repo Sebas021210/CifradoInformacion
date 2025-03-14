@@ -89,3 +89,40 @@ def decrypt_aes_cbc(input_file, output_file):
 ```
 
 ## Preguntas a Responder
+
+¿Qué tamaño de clave se está usando para DES, 3DES y AES
+- DES: Usa una clave de 56 bits
+- 3DES: Usa una clave de 168 bits
+- AES: Puede usar claves de 128, 192 o 256 bits
+
+¿Qué modo de operación está implementado?
+- Para DES: Se implementó ECB (Electronic Codebook)
+- Para 3DES: Se implementó CBC (Cipher Block Chaining)
+- Para AES: Se implementó ECB y CBC
+
+¿Por qué no debemos usar ECB en datos sensibles?
+- ECB cifra cada bloque de manera independiente y siempre produce el mismo cifrado para bloques idénticos, lo que permite patrones visibles.
+
+¿Cual es la diferencia entre ECB vs CBC, se puede notar directamente en una imagen?
+- ECB: Cada bloque se cifra de forma independiente. Se mantienen patrones visibles.
+- CBC: Cada bloque depende del anterior, con un IV aleatorio. Se elimina la estructura visible.
+
+¿Que es el IV?
+- IV (Vector de Inicialización) es un bloque de datos aleatorio usado en modos de cifrado en bloque como CBC, CFB y OFB para evitar que el mismo texto cifrado se genere para mensajes idénticos.
+
+¿Que es el PADDING?
+- El Padding se usa cuando el tamaño de los datos no es múltiplo del tamaño del bloque del algoritmo de cifrado.
+
+¿En qué situaciones se recomienda cada modo de operación?
+- ECB: No recomendado para datos sensibles. Solo en situaciones donde el rendimiento es más importante que la seguridad.
+- CBC: Recomendado para archivos, imágenes y datos sensibles donde se requiere aleatoriedad.
+- CFB: Bueno para flujos de datos o cuando no se necesita padding.
+- OFB: Útil para cifrado de transmisión de datos en tiempo real.
+- GCM: Mejor para transmisión segura, ya que incluye autenticación.
+
+¿Cómo elegir un modo seguro en cada lenguaje de programación?
+- Evitar ECB en datos sensibles.
+- Usar CBC o GCM para datos importantes.
+- Usar IV aleatorio y diferente para cada cifrado.
+- Utilizar librerías seguras y probadas.
+- No reutilizar claves ni IVs en múltiples cifrados.
