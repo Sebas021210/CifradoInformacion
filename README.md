@@ -134,8 +134,6 @@ Si tienes preguntas o comentarios, puedes contactarnos a traves de nuestras rede
 
 <p align="right">(<a href="#readme-top">Ir al inicio</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 [Redux]: https://img.shields.io/badge/Redux-764ABC?style=flat&logo=redux&logoColor=white
 [Redux-url]: https://redux.js.org/
