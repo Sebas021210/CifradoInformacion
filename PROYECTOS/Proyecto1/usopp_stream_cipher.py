@@ -10,6 +10,7 @@ def decrypt(ciphertext):
         keystream = generate_keystream(seed, len(cipherbytes))
         plaintext = bytes([c ^ k for c, k in zip(cipherbytes, keystream)])
         if plaintext.startswith(b"FLAG_"):
+            print(f"Texto cifrado: {ciphertext}")
             print(f"Semilla encontrada: {seed}")
             print(f"Texto descifrado: {plaintext.decode()}")
             break
